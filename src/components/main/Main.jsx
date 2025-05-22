@@ -66,14 +66,11 @@ export default function MotionCraft() {
     
     // Simulate AI processing with timeout
     setTimeout(() => {
-      // In a real application, we would send the image and prompt data
-      // to a backend service for processing
       
-      // For demo purposes, we'll just return a success message
       const mockVideo = {
         id: Date.now(),
         title: uploadedImage.name.split('.')[0],
-        url: imagePreview, // In real app, this would be the video URL
+        url: imagePreview, 
         thumbnail: imagePreview,
         createdAt: new Date().toISOString(),
         prompt: promptData.customPrompt,
@@ -102,7 +99,6 @@ export default function MotionCraft() {
     setCurrentStep(1);
   };
 
-  // Navigation between steps
   const nextStep = () => {
     if (currentStep === 2) {
       processImage();
@@ -124,7 +120,6 @@ export default function MotionCraft() {
       </Head>
 
       <div className="bg-black min-h-screen text-gray-100">
-        {/* Futuristic grid background */}
         <div className="absolute inset-0 opacity-5 bg-grid-pattern pointer-events-none"></div>
         
         <div className="container mx-auto px-4 py-8 relative z-10">
@@ -398,7 +393,6 @@ export default function MotionCraft() {
                 {processing ? (
                   <div className="text-center py-16">
                     <div className="flex flex-col items-center">
-                      {/* Fancy loading animation */}
                       <div className="relative h-20 w-20 mb-6">
                         <div className="absolute inset-0 border-t-2 border-blue-500 rounded-full animate-spin"></div>
                         <div className="absolute inset-2 border-t-2 border-r-2 border-purple-500 rounded-full animate-spin animation-delay-150"></div>
@@ -418,7 +412,6 @@ export default function MotionCraft() {
                   <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
                     <div className="md:col-span-3 bg-black bg-opacity-60 rounded-xl border border-gray-800 overflow-hidden">
                       <div className="relative pt-[56.25%] bg-black rounded-lg overflow-hidden">
-                        {/* In a real app, this would be a video player */}
                         <div className="absolute inset-0">
                           <Image 
                             src={generatedVideo.thumbnail} 
@@ -510,7 +503,6 @@ export default function MotionCraft() {
             )}
           </div>
 
-          {/* Previous projects */}
           {projects.length > 0 && (
             <div className="bg-gray-900 rounded-xl border border-gray-800 shadow-lg p-6 backdrop-blur bg-opacity-95">
               <div className="flex justify-between items-center mb-6">
